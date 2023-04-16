@@ -1,0 +1,45 @@
+// MyArrayList.java
+public class MyArrayList implements MyList {
+    private Object[] elements;
+    private int size;
+
+    public MyArrayList() {
+        elements = new Object[10];
+        size = 0;
+    }
+
+    @Override
+    public void add(Object element) {
+        if (size == elements.length) {
+            Object[] newElements = new Object[elements.length * 2];
+            System.arraycopy(elements, 0, newElements, 0, size);
+            elements = newElements;
+        }
+        elements[size++] = element;
+    }
+
+    @Override
+    public Object get(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException();
+        }
+        return elements[index];
+    }
+
+    @Override
+    public void remove(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException();
+        }
+        System.arraycopy(elements, index + 1, elements, index, size - index - 1);
+        size--;
+    }
+
+    @Override
+    public int size() {
+        return size;
+    }
+
+    // Другие методы интерфейса MyList могут быть реализованы здесь
+
+}
