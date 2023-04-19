@@ -1,4 +1,3 @@
-// MyArrayList.java
 public class MyArrayList implements MyList {
     private Object[] elements;
     private int size;
@@ -40,6 +39,6 @@ public class MyArrayList implements MyList {
         return size;
     }
 
-    // Другие методы интерфейса MyList могут быть реализованы здесь
+    
 
 }
