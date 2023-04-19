@@ -1,4 +1,3 @@
-// MyLinkedList.java
 public class MyLinkedList implements MyList {
     private Node head;
     private Node tail;
